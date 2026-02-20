@@ -1,0 +1,38 @@
+.Menu {
+    position: fixed;
+    top: 55px;
+    bottom: 0;
+    left: 0;
+    width: 75px;
+
+    z-index: 150;
+
+    background-color: white;
+}
+
+.sidebar-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 74px;
+
+    cursor: pointer;
+}
+
+.sidebar-link img {
+     height: 24px;
+     margin-bottom: 6px;
+     margin-top: 7px;
+}
+
+.sidebar-link div {
+    font-family: Roboto, Arial;
+    font-size: 10px;
+}
+
+.sidebar-link:hover {
+    
+    background-color: rgb(232, 232, 232);
+}

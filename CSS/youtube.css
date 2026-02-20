@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 95px;
+    padding-right: 20px;
+    overflow-x: hidden;
+    background-color: rgb(249, 249, 249);
+}
+
+p {
+    font-family: "Roboto";
+}
+
+
+.videos {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+    column-gap: 15px;
+    row-gap: 50px;
+}
+
+@media (min-width: 0px) and  (max-width: 750px) {
+    .videos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 1000px) {
+    .videos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1001px) {
+    .videos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
