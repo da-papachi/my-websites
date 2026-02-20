@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(19, 19, 19);
+    
+
+    
+}
+
+.game-name {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.play-button {
+
+    background-color: rgba(0,0,0,0);
+    font-size: 50px;
+
+    margin-right: 20px;
+
+    padding: 30px;
+    
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 4px;
+    border-radius: 100%;
+}
+
+.Result {
+    color: white;
+    font-size: 30px;
+     font-weight: bold;
+    font-family: Arial;
+}
+
+.Choice {
+    color: white;
+    font-family: Arial;
+}
+
+.Scores {
+    color: white;
+    font-family: Arial;
+}
+
+.choice-image {
+    font-size: 60px;
+}
+
+.reset-scores {
+    border-style: none;
+    font-family: Arial;
+    font-size: 17px;
+
+    padding: 10px 18px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Rock paper scissors</title>
+
+    <link rel="stylesheet" href="rps.css">
+
+</head>
+
+
+
+<body>
+    <p class="game-name">Rock Paper Scissors</p>
+    <button class="play-button" onclick="
+     PlayerChoice = '✊';
+     Result()
+    ">✊</button>
+
+
+    <button class="play-button" onclick="
+     PlayerChoice = '🫱';
+    Result()
+    ">🫱</button>
+
+
+
+    <button class="play-button" onclick="
+    PlayerChoice = '✌️';
+    Result()
+    ">✌️</button>
+
+    <p class="Result"></p>
+
+    <p class="Choice"></p>
+
+    <p class="Scores">Wins: 0, Losses: 0, Ties:0</p>
+
+    <button class="reset-scores" onclick="Reset()">Reset Scores</button>
+
+<script> 
+
+let randomizer = null;
+let PlayerChoice = null;
+let CompChoice = null;
+let ResultWord = null
+const ArrayOfItems = ["✊", "🫱", "✌️"];
+
+let Counter = JSON.parse(localStorage.getItem("rpsScore")) || {Wins: 0, Losses: 0, Ties: 0, FuckassMovesThatBarelyWhoKnow: 0};
+
+document.querySelector('.Scores').innerText = `Wins: ${Counter.Wins}, Losses: ${Counter.Losses}, Ties: ${Counter.Ties}`
+
+function updateScoreElement(typeofupdate) {
+  document.querySelector('.Scores').innerText = `Wins: ${Counter.Wins}, Losses: ${Counter.Losses}, Ties: ${Counter.Ties}` 
+  if (typeofupdate === 'Reset') {
+    document.querySelector('.Result').innerText = "The scores were resetted!"
+    document.querySelector('.Choice').innerText = '' }
+
+  else {
+      document.querySelector('.Choice').innerHTML = `Yours <span class="choice-image">${PlayerChoice}</span> vs Computer's <span class="choice-image">${CompChoice}</span>.`
+
+       document.querySelector('.Result').innerText = ResultWord
+  };
+};
+
+function Reset() {
+  localStorage.removeItem("rpsScore")
+  Counter = {Wins: 0, Losses: 0, Ties: 0, FuckassMovesThatBarelyWhoKnow: 0}
+  updateScoreElement('Reset')
+
+  
+}
+
+function Result() {
+    randomizer = Math.floor(Math.random() * ArrayOfItems.length);
+    CompChoice = ArrayOfItems[randomizer];
+
+     if (CompChoice === PlayerChoice) {
+       ResultWord = "Tie."
+      Counter.Ties+=1 }
+     else if (PlayerChoice === "✊" && CompChoice == "✌️" || PlayerChoice === "🫱" && CompChoice == "✊" || PlayerChoice === "✌️" && CompChoice == "🫱")
+     {
+       ResultWord = "You won."
+       Counter.Wins+=1
+     }
+     else if (PlayerChoice === "✊" && CompChoice == "🫱" || PlayerChoice === "🫱" && CompChoice == "✌️" || PlayerChoice === "✌️" && CompChoice == "✊")
+     { 
+       ResultWord = "You lost."
+       Counter.Losses+=1
+     }
+      localStorage.setItem("rpsScore", JSON.stringify(Counter))
+
+      updateScoreElement()
+
+       
+         
+}
+
+
+</script>
+
+</body>
+
