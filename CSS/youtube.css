@@ -3,7 +3,6 @@ body {
     padding-top: 80px;
     padding-left: 95px;
     padding-right: 20px;
-    overflow-x: hidden;
     background-color: rgb(249, 249, 249);
 }
 
@@ -38,4 +37,5 @@ p {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
 
